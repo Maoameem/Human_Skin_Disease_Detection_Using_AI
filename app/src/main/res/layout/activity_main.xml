@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:background="#030D43"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+
+        android:layout_width="350dp"
+        android:layout_height="150dp"
+        android:background="@drawable/btnall"
+        android:gravity="center"
+        android:orientation="vertical"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+        <Button
+            android:id="@+id/button"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="16dp"
+            android:text="Capture"
+            android:textColor="@color/white"
+            android:background="@drawable/colorw"
+            android:textAllCaps="false"
+            android:textSize="21sp"
+            android:elevation="40dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.061"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="16dp"
+            android:text="Gallery"
+            android:textColor="@color/white"
+            android:background="@drawable/colorw"
+            android:elevation="40dp"
+            android:textAllCaps="false"
+            android:textSize="21sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.938"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="350dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/btnall"
+        android:gravity="center"
+
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/imageView"
+            android:layout_width="350dp"
+            android:layout_height="250sp"
+            android:scaleType="centerCrop"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/animation" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="380dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="20dp"
+
+        android:gravity="center"
+        android:orientation="vertical"
+
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.081">
+
+        <TextView
+            android:id="@+id/classified"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView"
+            android:layout_centerHorizontal="true"
+            android:text="Diseases Detected as:"
+            android:fontFamily="monospace"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/confidencesText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.456"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:layout_constraintVertical_bias="0.288" />
+
+        <TextView
+            android:id="@+id/result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/classified"
+            android:layout_centerHorizontal="true"
+            android:text=""
+            android:textColor="#F8F8F8"
+            android:fontFamily="monospace"
+            android:textSize="27sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.467"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/classified"
+            app:layout_constraintVertical_bias="0.083" />
+
+        <TextView
+            android:id="@+id/confidencesText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/result"
+            android:layout_centerHorizontal="true"
+            android:text="Accuracy"
+            android:fontFamily="monospace"
+
+
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.46"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:layout_constraintVertical_bias="0.44" />
+
+        <TextView
+            android:id="@+id/confidence"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/confidencesText"
+            android:layout_centerHorizontal="true"
+            android:text=""
+            android:fontFamily="monospace"
+
+            android:textColor="#FFFFFF"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.467"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/confidencesText"
+            app:layout_constraintVertical_bias="0.203" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
